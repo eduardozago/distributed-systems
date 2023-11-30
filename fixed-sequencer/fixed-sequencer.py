@@ -1,6 +1,5 @@
 import queue
 import random
-from datetime import datetime
 
 def message_generator():
     # random message generator
@@ -29,7 +28,7 @@ def get_queue(queue):
 
     return messages
 
-# creating some tasks
+# create tasks
 def sender(queue, num_tasks):
     print("Sender Tasks")
 
@@ -38,6 +37,7 @@ def sender(queue, num_tasks):
         task(queue, message)
         print(f"Task {i}: {message}")
 
+# sequencer tasks
 def sequencer(queue):
     messages = []
 
@@ -51,6 +51,7 @@ def sequencer(queue):
         task(queue, messages_sorted[i])
         print(f"Task {i}: {messages_sorted[i]}")
 
+# receiver tasks
 def receiver(queue):
     messages = get_queue(queue)
 
@@ -64,7 +65,7 @@ def main():
 
     messages_queue = queue.Queue()
 
-    num_tasks = 10
+    num_tasks = 3
 
     sender(messages_queue, num_tasks)
 

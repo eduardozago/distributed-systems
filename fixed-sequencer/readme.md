@@ -11,7 +11,7 @@ The algorithm works as follows:
     i. After the sender group sends the messages, they are received in the sequencer
     ii. The sequencer orders messages according to the timestamp at which the message was created
 
-2. Receiver group 
+3. Receiver group 
     i. The receiver group receives the messages and processes them as ordered by the sequencer
 
 To execute:
