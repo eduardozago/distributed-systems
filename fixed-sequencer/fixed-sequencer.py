@@ -65,7 +65,9 @@ def main():
 
     messages_queue = queue.Queue()
 
-    num_tasks = 3
+    num_tasks = input("Enter the number of processes: ")
+
+    num_tasks = int(num_tasks)
 
     sender(messages_queue, num_tasks)
 
